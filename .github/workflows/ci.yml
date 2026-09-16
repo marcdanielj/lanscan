@@ -11,7 +11,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-go@v5
-        with: { go-version: '1.22' }
+        # 'stable' rather than a pin: Go 1.22's -race output trips the dyld
+        # linker on current macOS runners. go.mod still declares 1.22, so the
+        # compiler keeps enforcing that as the language floor.
+        with: { go-version: 'stable' }
       - run: test -z "$(gofmt -l .)" || { gofmt -l .; exit 1; }
       - run: go vet ./...
       - run: go test -race ./...
