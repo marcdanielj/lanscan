@@ -1,5 +1,8 @@
 # lanscan
 
+[![ci](https://github.com/marcdanielj/lanscan/actions/workflows/ci.yml/badge.svg)](https://github.com/marcdanielj/lanscan/actions/workflows/ci.yml)
+[![Go Reference](https://pkg.go.dev/badge/github.com/marcdanielj/lanscan.svg)](https://pkg.go.dev/github.com/marcdanielj/lanscan)
+
 A concurrent network scanner that identifies services by **what they say on the wire**, not by what port they happen to sit on.
 
 Go standard library only. No dependencies.
